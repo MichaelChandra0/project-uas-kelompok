@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login {
+    width: 900px;
+    background-color: #111;
+    border-radius: 15px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.login-kotak {
+    display: flex;
+    width: 100%;
+}
+
+.bagian_kiri {
+    flex: 1;
+    background-color: #000;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bagian_kiri img {
+    width: 90%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+}
+
+.bagian_kanan {
+    flex: 1;
+    background-color: #1d1d1d;
+    padding: 40px;
+    color: white;
+}
+
+.bagian_kanan h2 {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-top: 18px;
+    font-size: 15px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.login-btn {
+    width: 100%;
+    background-color: #ff4d00;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+label a {
+    color: rgb(13, 74, 207);
+}

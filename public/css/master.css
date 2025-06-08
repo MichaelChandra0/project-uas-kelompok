@@ -1,0 +1,86 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Nunito", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+/* CSS Navigasion */
+
+.top-bar {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar .title-left svg {
+    width: 20px;
+    height: 20px;
+}
+
+.top-bar .title-left {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    justify-content: space-around;
+}
+
+.top-bar .title-left input {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #111;
+    color: white;
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+}
+
+nav .account {
+    display: flex;
+    justify-content: space-around;
+
+    width: 150px;
+    align-items: center;
+}
+
+nav .account svg {
+    width: 25px;
+    height: 25px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 5px 0px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
