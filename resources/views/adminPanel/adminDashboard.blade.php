@@ -23,25 +23,37 @@
     <h2 class="section-title">Create Menu</h2>
     
     <div class="categories">
-
-        <div class="box">
-            <img src="./aset/burger.png" alt="">
-            <p><strong>Hamburger</strong></p>
-            <p>15000</p>
+      @forelse($menus as $menu)
+        <div class="box" >
+            <img src="{{ asset('storage/' . $menu->gambar)}}" alt="{{ $menu->gambar}}">
+            <p><strong>{{$menu->nama}}</strong></p>
+            <p>{{$menu->id}}</p>
+            <p>{{$menu->harga}}</p>
             
-            
+            <a href="{{ route('catalog.edit',$menu->id)}}">Edit</a>
+            <form action="{{ route('catalog.destroy', $menu->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus?')">
+          @csrf
+          @method('DELETE')
+          <button type="submit">Hapus</button>
+           </form>
             <div class="button">
-            <button class="delete">Delete</button>
-            <button class="edit">Edit</button>
+            
             </div>
         </div>
-    </div>
+        
+    @empty
+    <p>tidak ada data!</p>
+    @endforelse
+      </div>
+
 
 
     <div class="containerAdmin">
     <h2>Input Data Toko</h2>
-    <form id="formToko">
+    <form id="formToko" action="{{ route('catalog.store')}}" method="POST" enctype="multipartform-data">
+      @csrf
       <div class="form-group">
+        
         <label for="gambarMakanan">Upload Gambar Makanan</label>
         <input type="file" id="gambarMakanan" name="gambarMakanan">
       </div>
@@ -62,7 +74,7 @@
           <option value="Hamburger">Hamburger</option>
           <option value="Fried Chicken">Fried Chicken</option>
           <option value="French fries">French fries</option>
-        <option value="Soda">Soda</option>
+          <option value="Soda">Soda</option>
         </select>
       </div>
       <button type="submit">Simpan Data Toko</button>
@@ -80,29 +92,7 @@
   </div>
 
 
-<div id="popupForm" class="popup">
-  <div class="popup-content">
-    <span id="closeBtn" class="close">&times;</span>
-  
-    <form id="formToko">
-        <h2>Edit Data</h2>
-      <div class="form-group">
-        <label for="gambarMakanan">Upload Gambar Makanan</label>
-        <input type="file" id="gambarMakanan" name="gambarMakanan">
-      </div>
-      <div class="form-group">
-        <label for="namaMakanan">Nama Makanan</label>
-        <input type="text" id="namaMakanan" name="namaMakanan" required>
-      </div>
-      <div class="form-group">
-        <label for="hargaMakanan">Harga Makanan</label>
-        <input type="number" id="hargaMakanan" name="hargaMakanan" required>
-      </div>
-      <br>
-      <button>Submit</button>
-    </form>
-  </div>
-</div>
+
 </body>
 
 <script src="{{ asset('js/dashboardAdmin.js')}}"></script>

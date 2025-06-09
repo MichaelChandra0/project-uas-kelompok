@@ -1,16 +1,21 @@
-const box = document.querySelector(".box");
+const box = document.querySelectorAll(".box");
+console.log(box);
 const popUp = document.querySelector(".popup");
+
 const close = document
     .querySelector(".close")
     .addEventListener("click", function (e) {
         popUp.style.display = "none";
     });
 
-const btnEdit = box
-    .querySelector(".edit")
-    .addEventListener("click", function (e) {
+box.forEach((resault) => {
+    const btnEdit = resault.querySelector(".edit");
+    console.log(btnEdit);
+    btnEdit.addEventListener("click", function () {
+        console.log("oke");
         popUp.style.display = "block";
     });
+}); 
 
 //fungsi side bar
 
@@ -29,11 +34,11 @@ p.forEach((resault) => {
         sectionTitle.innerHTML = hasil;
 
         if (sectionTitle.textContent == "Create Menu") {
-            categories.style.display = "block";
-            containerAdmin.style.display = "none";
-        } else if (sectionTitle.textContent == "Edit / Delete") {
             categories.style.display = "none";
             containerAdmin.style.display = "block";
+        } else if (sectionTitle.textContent == "Edit / Delete") {
+            categories.style.display = "block";
+            containerAdmin.style.display = "none";
         }
     });
 });
