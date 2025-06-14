@@ -24,11 +24,29 @@ Dashboard
     </div>
   </section>
 
+  <section class="promos">
+    <h2 class="section-title">Sedang Promo</h2>
+    @foreach($random as $item)
+    <div class="box"><marquee behavior="" direction="">{{ $item->nama}}<br><strong>30% Off</strong><br></marquee></div>
+    @endforeach
+  </section>
+  <section>
+    <h2 class="section-title">Paling Hits</h2>
+    <div class="new-arrivals">
+      @foreach($terbaru as $item)
+      <div class="box">
+        <img src="{{ asset('storage/' . $item->gambar) }}" alt=""><br>
+        {{$item->kategori}}<br>
+        <strike>Rp. {{number_format($item->harga,0,',','.')}}</strike> Rp. {{ number_format($item->harga - ($item->harga * 0.20), 0, ',', '.') }}
+      </div>
+      @endforeach
+    </div>
+  </section>
   <section>
     <h2 class="section-title">Menu Kami</h2>
     <div class="categories">
-      @forelse($menus as $menu)
-      <div class="box">{{ $menu->nama}}<br><br>Rp. {{ number_format($menu->harga, 0, ',', '.') }}</div>
+      @forelse($beberapa as $menu)
+      <div class="box"><img src="{{ asset('storage/'. $menu->gambar) }}" alt=""><br><br>Rp. {{ number_format($menu->harga, 0, ',', '.') }}</div>
       @empty
       <p>tidak ada data</p>
       @endforelse
@@ -36,22 +54,5 @@ Dashboard
     </div>
   </section>
 
-  <section class="promos">
-    @foreach($random as $item)
-    <div class="box">{{ $item->nama}}<br><strong>30% Off</strong><br></div>
-    @endforeach
-  </section>
 
-  <section>
-    <h2 class="section-title">Paling Hits</h2>
-    <div class="new-arrivals">
-      @foreach($terbaru as $item)
-      <div class="box">
-        {{$item->nama}}<br>
-        {{$item->kategori}}<br>
-        <strike>Rp. {{number_format($item->harga,0,',','.')}}</strike> Rp. {{ number_format($item->harga - ($item->harga * 0.20), 0, ',', '.') }}
-      </div>
-      @endforeach
-    </div>
-  </section>
 @endsection
