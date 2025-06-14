@@ -3,7 +3,7 @@
 About Us
 @endsection
 @section('css')
-<link rel="stylesheet" href="{{asset('css/about.css')}}">
+<link rel="stylesheet" href="{{asset('css/page-style/about.css')}}">
 @endsection
 @section('konten')
     <h1>ABOUT US</h1>

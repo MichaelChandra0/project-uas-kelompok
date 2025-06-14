@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/shopStyle.css') }}">
+<link rel="stylesheet" href="{{ asset('css/page-style/shopStyle.css') }}">
 @endsection
 @section('konten')
 <div class="container">

@@ -3,7 +3,7 @@
 Contact Us
 @endsection
 @section('css')
-<link rel="stylesheet" href="{{asset('css/contact.css')}}">
+<link rel="stylesheet" href="{{asset('css/page-style/contact.css')}}">
 @endsection
 @section('konten')
     <form method="POST">

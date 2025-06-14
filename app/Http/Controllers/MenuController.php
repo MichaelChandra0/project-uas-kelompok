@@ -15,7 +15,7 @@ class MenuController extends Controller
     public function index()
     {
         $menus = Menu::latest()->paginate(10);
-        return view('shop', compact('menus'));
+        return view('pages.shop', compact('menus'));
     }
 
     public function adminView()

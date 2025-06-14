@@ -3,7 +3,7 @@
 Dashboard
 @endsection
 @section('css')
-<link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
+<link rel="stylesheet" href="{{asset('css/page-style/dashboard.css')}}">
 @endsection
 @section('konten')
   <section class="hero">
