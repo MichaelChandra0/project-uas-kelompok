@@ -33,7 +33,7 @@
                         <span>Berhasil Login, silahkan <a href="/login">login</a>.</span>
                     @endif
                     <button type="submit" class="register_btn">Log in</button>
-                    <label>Already have an account? <a href="/Register">Register now</a>.</label>
+                    <label>Already have an account? <a href="/login">Login now</a>.</label>
                 </form>
             </div>
         </div>

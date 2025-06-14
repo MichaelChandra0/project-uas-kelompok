@@ -37,7 +37,3 @@ Route::get('/login-admin',[AdminLoginRegistController::class,'tampilFormLogin'])
 Route::post('/login-admin',[AdminLoginRegistController::class,'login']);
 
 Route::get('/data-contact',[ContactController::class,'tampilContact'])->middleware('role:admin')->name('tampilContact');
-
-// Route::get("/data-contact",function(){
-//     return view('adminPanel.contactUs');
-// })->name('contact');
