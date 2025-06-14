@@ -9,7 +9,6 @@
   @yield('css')
 </head>
 <body>
-
   @include('layouts/navbar')
   <main>
 

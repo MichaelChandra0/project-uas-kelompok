@@ -36,6 +36,6 @@ class AdminLoginRegistController extends Controller
 
         return back()->withErrors([
             'gagal' => 'Usename atau Password Salah.',
-        ])->onlyInput('username');
+        ]);
     }
 }

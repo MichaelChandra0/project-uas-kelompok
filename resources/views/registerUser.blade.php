@@ -10,7 +10,7 @@
     <div class="Register">
         <div class="Register_Kotak">
             <div class="bagian_kiri">
-                <img src="https://chatgpt.com/backend-api/public_content/enc/eyJpZCI6Im1fNjgzZjIxM2M5NWY4ODE5MWExNWEyNDllYmZlYjYwMzk6ZmlsZV8wMDAwMDAwMDRlODA2MWY4ODZmZjE2NGJiMWI0ODZlNiIsInRzIjoiNDg1ODI0IiwicCI6InB5aSIsInNpZyI6IjA4MTYyNDNlMjM5YTNmM2IzODViYWY0ZTAzZGFlNzlmMzFiOTExYmIyYjc0NmM5ZDg1MDRmMzVkYjg4YmU4MjUiLCJ2IjoiMCIsImdpem1vX2lkIjpudWxsfQ==" alt="Register">
+                <img src="{{ asset('images/judul2.png') }}" alt="Register">
                 <h1 class="logo">Register</h1>
             </div>
             <div class="bagian_kanan">

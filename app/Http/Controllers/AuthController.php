@@ -36,7 +36,7 @@ class AuthController extends Controller
             'username' => $request->username,
             'password' => Hash::make($request->password),
         ]);
-        return redirect('/')->with('');
+        return redirect('/');
         }else{
             return redirect('/register')->with('gagal', 'Password tidak sesuai');
         }

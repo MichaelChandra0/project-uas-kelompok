@@ -1,28 +1,32 @@
 @extends('layouts/master')
 @section('title')
-Contact 
+Contact Us
 @endsection
 @section('css')
 <link rel="stylesheet" href="{{asset('css/contact.css')}}">
 @endsection
 @section('konten')
-    <h2>Daftar Kontak</h2>
-    <div class="contact-list">
-      <div class="contact-card">
-        <div class="contact-name">Andi</div>
-        <div class="contact-info"><span class="contact-label">Telepon:</span>0812 3456 7890</div>
-        <div class="contact-info"><span class="contact-label">Email:</span>andi@email.com</div>
-      </div>
-      <div class="contact-card">
-        <div class="contact-name">Budi</div>
-        <div class="contact-info"><span class="contact-label">Telepon:</span>0898 7654 3210</div>
-        <div class="contact-info"><span class="contact-label">Email:</span>budi@email.com</div>
-      </div>
-      <div class="contact-card">
-        <div class="contact-name">Citra</div>
-        <div class="contact-info"><span class="contact-label">Telepon:</span>0821 1234 5678</div>
-        <div class="contact-info"><span class="contact-label">Email:</span>citra@email.com</div>
-      </div>
+    <form method="POST">
+    <h2>Contact Us</h2>
+    @csrf
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap">
 
-    </div>
+        <label for="hp">Nomor HP</label>
+        <input type="text" id="hp" name="hp" placeholder="Masukkan nomor HP">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Masukkan email Anda">
+
+        <label for="area">Alamat</label>
+        <input type="text" id="alamat" name="alamat" placeholder="Masukan alamat anda">
+
+        <label for="pesan">Pesan</label>
+        <textarea id="pesan" name="pesan" placeholder="Tulis pesan"></textarea>
+
+        <button type="submit">Kirim</button>
+        @if(session('berhasil'))
+        <p>{{ session('berhasil') }}</p>
+        @endif
+    </form>
 @endsection

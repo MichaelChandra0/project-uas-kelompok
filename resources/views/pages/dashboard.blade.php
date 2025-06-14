@@ -8,9 +8,13 @@ Dashboard
 @section('konten')
   <section class="hero">
     <div class="left">
-      <h1>New Car Parts</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eius.</p>
-      <button><a href="/login">Shopping Now</a></button>
+      <h1>Menu Terbaru</h1>
+      <p>Nikmati menu terbaru kami: burger lezat, pizza melimpah, kentang renyah, dan soda segar untuk kepuasan maksimal Anda! </p>
+      @if(Auth::user())
+      <button><a href="/catalog">Lihat sekarang</a></button>
+      @else
+      <button><a href="/login">Lihat sekarang</a></button>
+      @endif
 
     </div>
   
@@ -21,51 +25,33 @@ Dashboard
   </section>
 
   <section>
-    <h2 class="section-title">Popular Categories</h2>
+    <h2 class="section-title">Menu Kami</h2>
     <div class="categories">
-
-        <div class="box">Parts Box<br>(20 items)</div>
-        <div class="box">Parts Box<br>(20 items)</div>
-        <div class="box">Parts Box<br>(20 items)</div>
-        <div class="box">Parts Box<br>(20 items)</div>
-        <div class="box">Parts Box<br>(20 items)</div>
-      <div class="box">Parts Box<br>(20 items)</div>
-      <div class="box">Parts Box<br>(20 items)</div>
-      <div class="box">Parts Box<br>(20 items)</div>
-  
+      @forelse($menus as $menu)
+      <div class="box">{{ $menu->nama}}<br><br>Rp. {{ number_format($menu->harga, 0, ',', '.') }}</div>
+      @empty
+      <p>tidak ada data</p>
+      @endforelse
 
     </div>
   </section>
 
   <section class="promos">
-    <div class="box">Car Wheel<br><strong>30% Off</strong><br><button>Shop Now</button></div>
-    <div class="box">Car Valls<br><strong>40% Off</strong><br><button>Shop Now</button></div>
-    <div class="box">Car Valls<br><strong>50% Off</strong><br><button>Shop Now</button></div>
+    @foreach($random as $item)
+    <div class="box">{{ $item->nama}}<br><strong>30% Off</strong><br></div>
+    @endforeach
   </section>
 
   <section>
-    <h2 class="section-title">New Arrivals</h2>
+    <h2 class="section-title">Paling Hits</h2>
     <div class="new-arrivals">
+      @foreach($terbaru as $item)
       <div class="box">
-        New Balance Fresh Foam<br>
-        Kaymin Car Parts<br>
-        <strike>$39.12</strike> $25.12
+        {{$item->nama}}<br>
+        {{$item->kategori}}<br>
+        <strike>Rp. {{number_format($item->harga,0,',','.')}}</strike> Rp. {{ number_format($item->harga - ($item->harga * 0.20), 0, ',', '.') }}
       </div>
-      <div class="box">
-        New Balance Fresh Foam<br>
-        Kaymin Car Parts<br>
-        <strike>$39.12</strike> $25.12
-      </div>
-      <div class="box">
-        New Balance Fresh Foam<br>
-        Kaymin Car Parts<br>
-        <strike>$39.12</strike> $25.12
-      </div>
-      <div class="box">
-        New Balance Fresh Foam<br>
-        Kaymin Car Parts<br>
-        <strike>$39.12</strike> $25.12
-      </div>
+      @endforeach
     </div>
   </section>
 @endsection
