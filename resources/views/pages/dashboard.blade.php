@@ -23,9 +23,9 @@ Dashboard
       <img src="{{asset('images/judul2.png')}}" alt="">
     </div>
   </section>
+  <h2 class="section-title">Sedang Promo</h2>
 
   <section class="promos">
-    <h2 class="section-title">Sedang Promo</h2>
     @foreach($random as $item)
     <div class="box"><marquee behavior="" direction="">{{ $item->nama}}<br><strong>30% Off</strong><br></marquee></div>
     @endforeach
