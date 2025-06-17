@@ -13,7 +13,7 @@
   <div class="container">
     <div class="content">
       <div class="left">
-        <h1>Panel Menu</h1>
+        <h1>Panel Menu</h1> 
         <p>Create Menu</p>
         <p>Edit / Delete</p>
         <a href="{{ route('tampilContact') }}">Data Contact Us</a>

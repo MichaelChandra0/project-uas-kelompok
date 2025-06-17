@@ -13,7 +13,7 @@ p.forEach((resault) => {
             categories.style.display = "none";
             containerAdmin.style.display = "block";
         } else if (sectionTitle.textContent == "Edit / Delete") {
-            categories.style.display = "block";
+            categories.style.display = "flex";
             containerAdmin.style.display = "none";
         }
     });

@@ -10,9 +10,9 @@ class DashboardController extends Controller
     public function index()
     {
         $menus = Menu::all();
-        $beberapa = $menus->take(5);
-        $random = $menus->random(4);
+        $menu_kami = $menus->take(5);
+        $sedang_promo_random = $menus->random(4);
         $terbaru = Menu::orderBy('created_at', 'desc')->take(4)->get();
-        return view('pages.dashboard',compact('beberapa','random','terbaru'));
+        return view('pages.dashboard',compact('menu_kami','sedang_promo_random','terbaru'));
     }
 }

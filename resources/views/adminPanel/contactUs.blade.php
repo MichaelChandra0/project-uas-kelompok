@@ -22,9 +22,9 @@
                 @forelse($contacts as $contact)
                 <tr>
                     <td>{{ $contact->nama}}</td>
-                    <td>{{ $contact->no_tel}}</td>
                     <td>{{ $contact->email}}</td>
                     <td>{{ $contact->alamat}}</td>
+                    <td>{{ $contact->no_tel}}</td>
                     <td>{{ $contact->pesan}}</td>
                 </tr>
                 @empty

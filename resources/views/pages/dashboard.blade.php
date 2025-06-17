@@ -24,9 +24,9 @@ Dashboard
     </div>
   </section>
   <h2 class="section-title">Sedang Promo</h2>
-
+  
   <section class="promos">
-    @foreach($random as $item)
+    @foreach($sedang_promo_random as $item)
     <div class="box"><marquee behavior="" direction="">{{ $item->nama}}<br><strong>30% Off</strong><br></marquee></div>
     @endforeach
   </section>
@@ -45,7 +45,7 @@ Dashboard
   <section>
     <h2 class="section-title">Menu Kami</h2>
     <div class="categories">
-      @forelse($beberapa as $menu)
+      @forelse($menu_kami as $menu)
       <div class="box"><img src="{{ asset('storage/'. $menu->gambar) }}" alt=""><br><br>Rp. {{ number_format($menu->harga, 0, ',', '.') }}</div>
       @empty
       <p>tidak ada data</p>
